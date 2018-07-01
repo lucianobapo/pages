@@ -54,7 +54,7 @@ class PagesTableCommand extends Command
      *
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         $fullPath = $this->createBaseMigration();
 
@@ -66,6 +66,17 @@ class PagesTableCommand extends Command
         $this->info('Pages tables created successfully!');
 
         $this->composer->dumpAutoloads();
+    }
+    
+    
+    /**
+     * Execute the console command.
+     *
+     * @return void
+     */
+    public function fire()
+    {
+        $this->handle();
     }
 
     /**
